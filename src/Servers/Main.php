@@ -56,6 +56,7 @@ class Main extends PluginBase {
          }
          if (strtolower($command->getName()) === "hcf") {
              $sender->getPlayer()->transfer("voidhcfpe.ml", "25630");
-         }
+        }
+    return true;
     }
 }

@@ -9,3 +9,11 @@ commands:
         description: Allows you to see a list of servers you can teleport to.
     server:
         description: Choose between servers through out The Void Network.
+    factions:
+        description: Go to the factions server.
+    prisons:
+        description: Go to the Prisons server.
+    kitpvp:
+        description: Go to the KitPvP server.
+    hcf:
+        description: Go to the HCF server.

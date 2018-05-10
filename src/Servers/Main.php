@@ -61,10 +61,11 @@ class Main extends PluginBase implements Listener {
          if (strtolower($command->getName()) === "hcf") {
              $sender->getPlayer()->transfer("voidhcfpe.ml", "25630");
         }
+    return true;
     }
     public function onQuery(QueryRegenerateEvent $event) {
-        $serverName = $sender->getServer()->getServerName();
-        $game_id = $sender->getServer()->getServerUniqueId();
+        $serverName = $event->getServer()->getServerName();
+        $game_id = $event->getServer()->getServerUniqueId();
     if ($strtolower($command->getName()) === "serverid") {
         $sender->sendMessage("§aYou are on: §2$serverName §cwith the Server ID; §4$game_id");
     }

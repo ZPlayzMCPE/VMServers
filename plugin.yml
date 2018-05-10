@@ -17,3 +17,5 @@ commands:
         description: Go to the KitPvP server.
     hcf:
         description: Go to the HCF server.
+    serverid:
+        description: Allows to see the server ID, and the server name.

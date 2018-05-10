@@ -65,7 +65,7 @@ class Main extends PluginBase implements Listener {
     public function onQuery(QueryRegenerateEvent $event) {
         $serverName = $sender->getServer()->getServerName();
         $game_id = $sender->getServer()->getServerUniqueId();
-    if($strtolower($command->getName()) === "serverid") {
+    if ($strtolower($command->getName()) === "serverid") {
         $sender->sendMessage("§aYou are on: §2$serverName §cwith the Server ID; §4$game_id");
     }
     return true;

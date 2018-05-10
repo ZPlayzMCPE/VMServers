@@ -5,14 +5,18 @@ namespace Servers;
 use pocketmine\command\{Command, CommandSender};
 use pocketmine\plugin\PluginBase;
 use pocketmine\utils\TextFormat;
+use pocketmine\event\Listener;
+use pocketmine\{Server, Player};
+use pocketmine\event\server\QueryRegenerateEvent;
 
-class Main extends PluginBase {
+class Main extends PluginBase implements Listener {
     
     public function onLoad(): void{
     $this->getServer()->getLogger()->info("Plugin loading.. Please wait whilst it loads onto the server.");
     }
     
     public function onEnable(): void{
+        $this->getServer()->getPluginManager()->registerEvents($this, $this);
         $this->getServer()->getLogger()->info("Plugin has been enabled succesfully.");
     }
     
@@ -57,6 +61,13 @@ class Main extends PluginBase {
          if (strtolower($command->getName()) === "hcf") {
              $sender->getPlayer()->transfer("voidhcfpe.ml", "25630");
         }
+    }
+    public function onQuery(QueryRegenerateEvent $event) {
+        $serverName = $sender->getServer()->getServerName();
+        $game_id = $sender->getServer()->getServerUniqueId();
+    if($strtolower($command->getName()) === "serverid") {
+        $sender->sendMessage("§aYou are on: §2$serverName §cwith the Server ID; §4$game_id");
+    }
     return true;
     }
 }
